@@ -1,0 +1,20 @@
+/* VARIABLES Y CONFIGURACION INICIAL */
+
+:root {
+
+    --color-background: #07111f;
+    --color-panel: #10243c;
+    --color-card: #19334f;
+
+    --color-text: #f3f7ff;
+    --color-muted: #b8c9df;
+
+    --color-cyan: #35e7f2;
+    --color-blue: #67aaff;
+
+    --color-border: rgba(53, 231, 242, 0.45);
+
+    --radius: 0.8rem;
+    --spacing: 1rem;
+}
+
