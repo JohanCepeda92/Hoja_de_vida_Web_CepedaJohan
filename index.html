@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- R1: Adaptación a dispositivos móviles -->
+    <!-- R1: etiqueta viewport para adaptar la página al ancho del dispositivo. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
@@ -39,7 +39,8 @@
 
             <div class="site-header__aside">
 
-                <img class="site-header__photo" src="Imagenes/foto-perfil.png" alt="Fotografía de Johan Cepeda">
+                <!-- R7: imagen con ruta relativa y texto alternativo descriptivo. -->
+                <img class="site-header__photo" src="Imagenes/foto-perfil.jpg" alt="Fotografía de Johan Cepeda">
 
                 <p class="site-badge">
                     HTML · CSS · TECNOLOGÍA
@@ -49,8 +50,7 @@
 
         </header>
 
-        <!-- R8: Menú de navegación común a todas las páginas -->
-        <!-- R9: Los enlaces internos utilizan rutas relativas -->
+        <!-- R8: navegación común; R9: todos los destinos internos son rutas relativas. -->
         <nav class="site-nav" aria-label="Navegación principal">
 
             <ul class="site-nav__list">
@@ -104,7 +104,7 @@
         <main class="cv-main">
 
             <!-- FORMACIÓN ACADÉMICA -->
-            <section class="panel" id="formacion" aria-labelledby="formacion-tittle">
+            <section class="panel" id="formacion" aria-labelledby="formacion-title">
 
                 <p class="section-kicker">
 
@@ -112,7 +112,7 @@
 
                 </p>
 
-                <h2 id="formacion-tittle">
+                <h2 id="formacion-title">
                     Formación académica
                 </h2>
 
@@ -120,7 +120,7 @@
 
                     <h3>Profesional en Negocios Internacionales</h3>
 
-                    <p class="item-subtittle">
+                    <p class="item-subtitle">
 
                         Universidad Santo Tomás
                     </p>
@@ -142,7 +142,7 @@
                     03 / EXPERIENCIA
                 </p>
 
-                <h2 id="experiencia-tittle">
+                <h2 id="experiencia-title">
                     Experiencia Profesional
                 </h2>
 
@@ -179,41 +179,43 @@
 
                 </article>
 
-                <!-- PROYECTO DESTACADO -->
-                <section class="panel" id="proyectos" aria-labelledby="proyectos-title">
+            </section>
 
-                    <p class="section-kicker">
-                        04 / PORTAFOLIO
+            <!-- PROYECTO DESTACADO -->
+            <section class="panel" id="proyectos" aria-labelledby="proyectos-title">
+
+                <p class="section-kicker">
+                    04 / PORTAFOLIO
+                </p>
+
+                <h2 id="proyectos-title">
+                    Proyecto destacado
+                </h2>
+
+                <article class="project-card">
+
+                    <p class="project-tag">
+                        PROYECTO ACADÉMICO
                     </p>
 
-                    <h2 id="proyectos-title">
-                        Proyecto destacado
-                    </h2>
+                    <h3>
+                        Help Me Tenerife
+                    </h3>
 
-                    <article class="project-card">
+                    <p>
+                        Desarrollo de un sitio web corporativo
+                        utilizando HTML5 y CSS3 para presentar
+                        servicios, organizar información y facilitar
+                        la navegación entre páginas.
+                    </p>
 
-                        <p class="project-tag">
-                            PROYECTO ACADÉMICO
-                        </p>
+                    <a class="text-link" href="help-me.html">
+                        Explorar proyecto &rarr;
+                    </a>
 
-                        <h3>
-                            Help Me Tenerife
-                        </h3>
+                </article>
 
-                        <p>
-                            Desarrollo de un sitio web corporativo
-                            utilizando HTML5 y CSS3 para presentar
-                            servicios, organizar información y facilitar
-                            la navegación entre páginas.
-                        </p>
-
-                        <a class="text-link" href="help-me.html">
-                            Explorar proyecto &rarr;
-                        </a>
-
-                    </article>
-
-                </section>
+            </section>
 
         </main>
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- R1: viewport para adaptar el diseño al ancho de pantalla. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ponte en contacto con Johan Cepeda para conversar sobre oportunidades profesionales y proyectos.">
+    <meta name="theme-color" content="#f7f9f7">
+    <title>Hablemos | Johan Cepeda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-page">
+    <div class="contact-layout">
+        <header class="contact-hero" id="inicio">
+            <div class="contact-hero-copy">
+                <p class="contact-eyebrow">Johan Cepeda <span aria-hidden="true">/</span> Contacto</p>
+                <h1>Hablemos<span class="contact-accent" aria-hidden="true">.</span></h1>
+                <p class="contact-intro">Estoy abierto a conversar sobre oportunidades, ideas y proyectos en los que la tecnología pueda aportar valor.</p>
+                <section class="contact-message" aria-labelledby="contact-message-title">
+                    <p class="contact-eyebrow">Conectemos</p>
+                    <h2 id="contact-message-title">Una buena conversación puede ser el comienzo.</h2>
+                    <p>Si quieres conocer más sobre mi perfil o explorar una posible colaboración, puedes encontrarme en GitHub o escribirme a mi correo profesional.</p>
+                </section>
+            </div>
+            <figure class="contact-portrait-card">
+                <span class="contact-portrait-orbit contact-portrait-orbit-one" aria-hidden="true"></span>
+                <span class="contact-portrait-orbit contact-portrait-orbit-two" aria-hidden="true"></span>
+                <!-- R7: imagen local responsiva con texto alternativo descriptivo. -->
+                <img src="Imagenes/foto-perfil.jpg" alt="Fotografía de Johan Cepeda">
+                <figcaption><span class="contact-portrait-dot" aria-hidden="true"></span> Johan Cepeda <span class="contact-caption-divider" aria-hidden="true">·</span> Perfil profesional</figcaption>
+            </figure>
+        </header>
+
+        <!-- R8: navegación común; R9: destinos internos con rutas relativas. -->
+        <nav class="contact-nav" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="help-me.html">Proyecto</a>
+            <a href="contacto.html" aria-current="page">Contacto</a>
+        </nav>
+
+        <main class="contact-main">
+            <section class="contact-cards" aria-label="Canales de contacto">
+                <article class="contact-card">
+                    <div class="contact-card-top"><span class="contact-card-index">01</span><span class="contact-icon" aria-hidden="true">↗</span></div>
+                    <h2>GitHub</h2>
+                    <p>Mis proyectos y el trabajo que voy construyendo.</p>
+                    <!-- R10: enlace externo en pestaña nueva con protección noopener noreferrer. -->
+                    <a class="contact-button" href="https://github.com/JohanCepeda92" target="_blank" rel="noopener noreferrer" aria-label="Visitar el perfil de Johan Cepeda en GitHub (se abre en una pestaña nueva)">Visitar perfil <span aria-hidden="true">↗</span></a>
+                </article>
+
+                <article class="contact-card contact-card-featured">
+                    <div class="contact-card-top"><span class="contact-card-index">02</span><span class="contact-icon" aria-hidden="true">✳</span></div>
+                    <h2>Correo profesional</h2>
+                    <p>Para consultas profesionales y propuestas de colaboración.</p>
+                    <p class="contact-placeholder"><span class="contact-placeholder-label">Correo electrónico</span><br><code>Johannicolascepeda92@gmail.com</code></p>
+                </article>
+            </section>
+
+            <p class="contact-project-note">Conoce el proyecto <a href="help-me.html">Help Me Tenerife</a>.</p>
+        </main>
+
+        <footer class="contact-footer">
+            <p>© Johan Cepeda <span aria-hidden="true">·</span> Portafolio profesional</p>
+            <a href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a>
+        </footer>
+    </div>
+</body>
+</html>

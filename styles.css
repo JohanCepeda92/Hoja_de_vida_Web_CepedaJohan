@@ -76,6 +76,9 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
+/* R2: Mobile first; las media queries quedan al final del archivo y en orden ascendente. */
+/* R4: Las áreas base apilan la hoja de vida en celular. */
+/* R6: Contenido centrado, max-width y medidas relativas. */
 .cv-layout {
     display: grid;
 
@@ -138,7 +141,7 @@ a:focus-visible {
     overflow-wrap: anywhere;
 }
 
-.site-subtittle {
+.site-subtitle {
     margin-bottom: 1rem;
 }
 
@@ -303,11 +306,6 @@ a:focus-visible {
     margin-bottom: 0.35rem;
 }
 
-.item-date {
-    front-size: 0.9rem;
-    color: var(--color-cyan);
-}
-
 .project-tag {
     color: var(--color-cyan);
 
@@ -337,7 +335,7 @@ a:focus-visible {
     min-width: 0;
 }
 
-/* TARJETAS CON AUTO-FIT Y MINMAX */
+/* R5: La cuadrícula de habilidades adapta sus tarjetas con auto-fit y minmax. */
 
 .skills-grid {
     display: grid;
@@ -375,7 +373,7 @@ a:focus-visible {
     margin-top: 0.65rem;
 }
 
-/* IMAGENES RESPONSIVE */
+/* R7: Las imágenes se ajustan al contenedor; el HTML proporciona alt descriptivo. */
 
 img {
     display: block;
@@ -410,9 +408,209 @@ img {
     font-weight: 700;
 }
 
-/* PRIMER BREAKPOINT - 600PX
-   Adaptación para pantallas mas amplias */
+/* Estilos específicos de contacto.html, con reglas base mobile first. */
 
+body.contact-page {
+    --contact-ink: #172b3b;
+    --contact-muted: #63737c;
+    --contact-mint: #48a88d;
+    --contact-mint-dark: #267d67;
+    --contact-line: #dfe8e3;
+    --contact-paper: #f7f9f7;
+    --contact-white: #ffffff;
+
+    min-height: 100vh;
+    background: var(--contact-paper);
+    color: var(--contact-ink);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+.contact-page p { color: var(--contact-muted); }
+.contact-page .contact-eyebrow { color: var(--contact-mint-dark); }
+.contact-page a { color: var(--contact-ink); }
+.contact-page a:hover { color: var(--contact-mint-dark); }
+.contact-page a:focus-visible { outline: 3px solid var(--contact-mint); outline-offset: 4px; }
+
+/* R6: Contenedor de contacto centrado, con max-width y unidades relativas. */
+.contact-layout {
+    width: min(100% - 2.5rem, 70rem);
+    min-height: 100vh;
+    margin-inline: auto;
+    padding-block: clamp(1.5rem, 5vw, 3.5rem) 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: center; padding-block: clamp(2rem, 7vw, 5rem) 2rem; }
+.contact-hero-copy { min-width: 0; }
+.contact-eyebrow {
+    margin-bottom: 1rem;
+    color: var(--contact-mint-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.contact-hero h1 {
+    margin-bottom: 1rem;
+    color: var(--contact-ink);
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 600;
+    letter-spacing: -0.065em;
+    line-height: 0.98;
+}
+.contact-accent { color: var(--contact-mint); }
+.contact-intro { max-width: 36rem; margin-bottom: 0; font-size: clamp(1.05rem, 2vw, 1.25rem); }
+.contact-message { max-width: 38rem; margin-top: 2rem; margin-bottom: 0; }
+.contact-message .contact-eyebrow { margin-bottom: 0.65rem; }
+.contact-message h2 { max-width: 34rem; margin-bottom: 0.75rem; color: var(--contact-ink); font-size: clamp(1.45rem, 3vw, 2rem); letter-spacing: -0.035em; }
+.contact-message > p:last-child { max-width: 36rem; margin-bottom: 0; }
+
+.contact-portrait-card { position: relative; display: grid; place-items: center; gap: 1.15rem; min-width: 0; min-height: 19rem; margin: 0; padding: 2rem 1.25rem 1.4rem; overflow: hidden; isolation: isolate; background: #e7f4ee; border: 1px solid #d3e8dd; border-radius: 1.5rem; box-shadow: 0 1rem 2.5rem rgba(23, 43, 59, 0.08); }
+.contact-portrait-card::before, .contact-portrait-card::after { position: absolute; z-index: -1; content: ""; border: 1px solid rgba(72, 168, 141, 0.22); border-radius: 50%; }
+.contact-portrait-card::before { width: 17rem; aspect-ratio: 1; top: -7rem; right: -5rem; }
+.contact-portrait-card::after { width: 12rem; aspect-ratio: 1; bottom: -6.5rem; left: -3rem; }
+.contact-portrait-card img { position: relative; z-index: 1; display: block; width: min(100%, 14rem); max-width: 100%; aspect-ratio: 1; height: auto; object-fit: cover; object-position: center 35%; border: 0.45rem solid rgba(255, 255, 255, 0.88); border-radius: 50%; box-shadow: 0 0.8rem 2rem rgba(23, 43, 59, 0.16); }
+.contact-portrait-card figcaption { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.45rem; color: var(--contact-ink); font-size: 0.85rem; font-weight: 700; text-align: center; }
+.contact-portrait-dot { width: 0.5rem; height: 0.5rem; background: var(--contact-mint-dark); border-radius: 50%; }
+.contact-caption-divider { color: var(--contact-mint-dark); }
+
+.contact-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.6rem;
+    padding-block: 1rem;
+    border-top: 1px solid var(--contact-line);
+    border-bottom: 1px solid var(--contact-line);
+}
+.contact-nav a { padding-block: 0.35rem; font-size: 0.92rem; text-decoration: none; }
+.contact-nav a[aria-current="page"] { color: var(--contact-mint-dark); font-weight: 700; }
+.contact-main { flex: 1; padding-block: clamp(2.5rem, 7vw, 5rem); }
+.contact-cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 17rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    background: var(--contact-white);
+    border: 1px solid var(--contact-line);
+    border-radius: 1rem;
+    box-shadow: 0 0.75rem 2rem rgba(23, 43, 59, 0.035);
+}
+.contact-card-featured { background: #eff7f3; border-color: #d5e9df; }
+.contact-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.contact-card-index { color: var(--contact-muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; }
+.contact-icon { color: var(--contact-mint-dark); font-size: 1.4rem; }
+.contact-card h2 { margin-bottom: 0.55rem; color: var(--contact-ink); font-size: 1.3rem; }
+.contact-card > p { margin-bottom: 1.4rem; }
+.contact-page a.contact-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: fit-content;
+    min-height: 2.9rem;
+    margin-top: auto;
+    padding: 0.7rem 1rem;
+    color: #fff;
+    background: var(--contact-mint-dark);
+    border: 1px solid var(--contact-mint-dark);
+    border-radius: 0.55rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.contact-page a.contact-button:hover { color: #fff; background: #1d6654; transform: translateY(-1px); }
+.contact-placeholder { margin-top: auto; padding-top: 0.5rem; overflow-wrap: anywhere; }
+.contact-placeholder-label { color: var(--contact-mint-dark); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.contact-placeholder code { color: var(--contact-ink); font-family: inherit; font-size: 0.95rem; }
+.contact-project-note { margin: 1.25rem 0 0; font-size: 0.82rem; }
+
+.contact-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--contact-line);
+}
+.contact-footer p { margin-bottom: 0; font-size: 0.85rem; }
+.contact-footer a { font-size: 0.85rem; font-weight: 700; text-decoration: none; }
+/* Identidad de help-me.html: basada en el sistema visual de Help Me Tenerife */
+/* R6: Contenido Help Me centrado y limitado mediante max-width. */
+body.helpme-page {
+    --helpme-blue: #0878f9;
+    --helpme-blue-dark: #064a9b;
+    --helpme-navy: #071a3d;
+    --helpme-cyan: #00d9ff;
+    --helpme-white: #ffffff;
+    --helpme-light: #f0f7ff;
+    --helpme-gray: #66758a;
+    --helpme-text: #172b46;
+    --helpme-border: rgba(7, 26, 61, 0.15);
+    --helpme-content-width: 70rem;
+    margin: 0;
+    background: var(--helpme-white);
+    color: var(--helpme-text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+.helpme-page h1,
+.helpme-page h2,
+.helpme-page h3 { margin-top: 0; font-family: "Trebuchet MS", Arial, sans-serif; line-height: 1.2; }
+.helpme-page h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
+.helpme-page h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+.helpme-page h3 { font-size: 1.3rem; }
+.helpme-page p { color: var(--helpme-gray); }
+.helpme-page img { display: block; max-width: 100%; height: auto; }
+.helpme-page a { color: var(--helpme-blue-dark); text-decoration: none; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+.helpme-page a:focus-visible { outline: 3px solid var(--helpme-blue); outline-offset: 4px; }
+
+.helpme-page .helpme-header { position: static; z-index: 100; background: var(--helpme-navy); border-bottom: 3px solid var(--helpme-cyan); box-shadow: 0 5px 20px rgba(7, 26, 61, 0.18); }
+.helpme-page .helpme-header-inner { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; max-width: var(--helpme-content-width); margin-inline: auto; padding: 0.75rem; }
+.helpme-page .helpme-brand { display: inline-block; flex-shrink: 0; }
+.helpme-page .helpme-brand img { width: 76px; height: 64px; object-fit: contain; border-radius: 0.5rem; }
+.helpme-page .helpme-nav { min-width: 0; }
+.helpme-page .helpme-nav-list { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.2rem; margin: 0; padding: 0; list-style: none; }
+.helpme-page .helpme-nav-list a { display: block; padding: 0.5rem; color: var(--helpme-white); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em; border-radius: 0.5rem; }
+.helpme-page .helpme-nav-list a:hover,
+.helpme-page .helpme-nav-list a[aria-current="page"] { color: var(--helpme-navy); background: var(--helpme-cyan); }
+
+.helpme-page .helpme-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 25rem; padding: 4rem 1.2rem; color: var(--helpme-white); background: var(--helpme-navy); }
+.helpme-page .helpme-hero-image { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 72% center; }
+.helpme-page .helpme-hero::before { position: absolute; z-index: -1; inset: 0; content: ""; background: linear-gradient(90deg, rgba(7, 26, 61, 0.94) 0%, rgba(7, 26, 61, 0.78) 58%, rgba(7, 26, 61, 0.38) 100%); }
+.helpme-page .helpme-hero::after { position: absolute; z-index: 0; top: -9rem; right: -8rem; width: 24rem; aspect-ratio: 1; content: ""; border: 1px solid rgba(0, 217, 255, 0.4); border-radius: 50%; box-shadow: 0 0 0 25px rgba(0, 217, 255, 0.04), 0 0 0 55px rgba(0, 217, 255, 0.03); pointer-events: none; }
+.helpme-page .helpme-hero-content { position: relative; z-index: 1; max-width: 53rem; margin-inline: auto; }
+.helpme-page .helpme-eyebrow { margin-bottom: 1rem; color: var(--helpme-cyan); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.helpme-page .helpme-hero h1 { max-width: 50rem; margin-bottom: 1.5rem; color: var(--helpme-white); }
+.helpme-page .helpme-hero-content > p:not(.helpme-eyebrow) { max-width: 40rem; color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; line-height: 1.9; }
+.helpme-page .helpme-hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.helpme-page .helpme-button { display: inline-block; max-width: 100%; padding: 0.85rem 1.4rem; border: 2px solid var(--helpme-cyan); border-radius: 999px; font-size: 0.95rem; font-weight: 700; line-height: 1.4; text-align: center; }
+.helpme-page .helpme-button-primary { color: var(--helpme-navy); background: var(--helpme-cyan); }
+.helpme-page .helpme-button:hover { color: var(--helpme-navy); background: #46e5ff; }
+
+.helpme-page .helpme-services { padding: 3rem 1rem 4rem; background: var(--helpme-light); }
+.helpme-page .helpme-section-heading { max-width: 47.5rem; margin: 0 auto 2.5rem; padding-inline: 1rem; text-align: center; }
+.helpme-page .helpme-section-eyebrow { margin-bottom: 0.5rem; color: var(--helpme-blue); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+.helpme-page .helpme-section-eyebrow::before { display: inline-block; margin-right: 0.5rem; color: var(--helpme-cyan); content: "✦"; }
+.helpme-page .helpme-section-heading h2 { margin-bottom: 1rem; color: var(--helpme-navy); }
+.helpme-page .helpme-section-heading > p:last-child { margin-bottom: 0; }
+.helpme-page .helpme-services-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; max-width: var(--helpme-content-width); margin-inline: auto; }
+.helpme-page .helpme-service-card { min-width: 0; padding: 1.2rem; background: var(--helpme-white); border: 1px solid var(--helpme-border); border-top: 4px solid var(--helpme-blue); border-radius: 1rem; box-shadow: 0 10px 30px rgba(7, 26, 61, 0.1); overflow-wrap: anywhere; }
+.helpme-page .helpme-service-card:nth-child(odd) { border-top-color: var(--helpme-cyan); }
+.helpme-page .helpme-service-card h3 { margin-bottom: 1rem; color: var(--helpme-navy); }
+.helpme-page .helpme-service-card img { width: 100%; height: auto; margin-bottom: 1rem; border-radius: 0.5rem; }
+.helpme-page .helpme-service-card p { margin-bottom: 0; color: var(--helpme-gray); }
+.helpme-page .helpme-services-note { max-width: var(--helpme-content-width); margin: 2rem auto 0; color: var(--helpme-gray); font-size: 0.9rem; text-align: center; }
+.helpme-page .helpme-footer { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.5rem 1rem; color: var(--helpme-white); background: var(--helpme-navy); border-top: 3px solid var(--helpme-cyan); text-align: center; }
+.helpme-page .helpme-footer p { margin: 0; color: rgba(255, 255, 255, 0.82); font-size: 0.9rem; }
+.helpme-page .helpme-footer a { color: var(--helpme-cyan); font-weight: 700; }
+
+/* R3: Primer breakpoint; activa cambios visibles desde 600 px. */
 @media (min-width: 600px) {
 
     .cv-layout {
@@ -451,12 +649,27 @@ img {
         align-items: center;
     }
 
+    .contact-layout { width: min(100% - 2.5rem, 70rem); }
+    .contact-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .contact-hero { grid-template-columns: minmax(0, 1.1fr) minmax(17rem, 0.9fr); gap: clamp(2rem, 5vw, 4rem); }
+    .contact-portrait-card { min-height: 25rem; padding: 2rem; }
+
+    .helpme-page .helpme-services { padding-inline: 1.5rem; }
+    .helpme-page .helpme-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* R3 Y R4: SEGUNDO BREAKPOINT - 1024PX
-   Composición ampliada para computador */
+/* R3: Desde 801 px, logotipo y navegación de Help Me comparten fila. */
+@media (min-width: 801px) {
+    .helpme-page .helpme-header-inner { flex-direction: row; justify-content: space-between; gap: 1.5rem; padding: 0.6rem 1.5rem; }
+    .helpme-page .helpme-nav-list { justify-content: flex-end; gap: 0.4rem; }
+}
 
+/* R3: Tercer breakpoint; Help Me amplía la cuadrícula y fija su cabecera. */
+/* R4: La cuadrícula de la hoja de vida separa principal y lateral. */
 @media (min-width: 1024px) {
+    .helpme-page .helpme-header { position: sticky; top: 0; }
+    .helpme-page .helpme-services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+
 
     .cv-layout {
         grid-template-columns:
@@ -509,5 +722,4 @@ img {
     .cv-sidebar {
         grid-template-columns: minmax(0, 1fr);
     }
-
 }

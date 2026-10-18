@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- R1: viewport para adaptar el diseño al ancho de pantalla. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce los servicios de Help Me Tenerife: construcción, remodelaciones, mudanzas, transporte, limpieza, gestiones, marketing, publicidad y seguros.">
+    <meta name="theme-color" content="#071a3d">
+    <title>Help Me Tenerife | Soluciones profesionales para ti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="helpme-page">
+    <header class="helpme-header" id="inicio">
+        <div class="helpme-header-inner">
+            <a class="helpme-brand" href="#inicio" aria-label="Help Me Tenerife, inicio de esta página">
+                <!-- R7: imagen local responsiva con texto alternativo descriptivo. -->
+                <img src="Imagenes/help-me/logo-help-me.jpg" alt="Logotipo de Help Me con la isla de Tenerife y un marcador de ubicación">
+            </a>
+            <!-- R8: navegación común; R9: destinos internos con rutas relativas. -->
+            <nav class="helpme-nav" aria-label="Navegación principal">
+                <ul class="helpme-nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="help-me.html" aria-current="page">Proyecto</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="helpme-hero" aria-labelledby="helpme-title">
+            <!-- R7: imagen relativa y responsiva con alt descriptivo. -->
+            <img class="helpme-hero-image" src="Imagenes/help-me/portada-help-me.jpg" alt="Vista panorámica de Tenerife con el Teide, la costa y el logotipo de Help Me" fetchpriority="high">
+            <div class="helpme-hero-content">
+                <p class="helpme-eyebrow">HELP ME · SERVICIOS PROFESIONALES PARA TI</p>
+                <h1 id="helpme-title">Un solo lugar para encontrar soluciones</h1>
+                <p>Conoce nuestros servicios de construcción, remodelaciones, mudanzas, limpieza, gestiones, marketing y publicidad y mucho más.</p>
+                <div class="helpme-hero-actions">
+                    <a class="helpme-button helpme-button-primary" href="#helpme-services">Explorar servicios <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="helpme-services" id="helpme-services" aria-labelledby="helpme-services-title">
+            <div class="helpme-section-heading">
+                <p class="helpme-section-eyebrow">Qué hacemos</p>
+                <h2 id="helpme-services-title">Servicios de Help Me - Tenerife</h2>
+                <p>Descubre algunas de las áreas en las que podemos ayudarte a encontrar soluciones profesionales para tus necesidades.</p>
+            </div>
+
+            <div class="helpme-services-grid">
+                <!-- R7: cada imagen de servicio es responsiva y tiene un alt específico. -->
+                <article class="helpme-service-card">
+                    <h3>Remodelaciones y Construcción</h3>
+                    <img src="Imagenes/help-me/servicio-construccion.jpg" alt="Trabajo de construcción y remodelación de una vivienda" loading="lazy">
+                    <p>Servicios de construcción y remodelación para diferentes espacios, incluyendo viviendas, oficinas y locales comerciales, piscinas, jardines y más.</p>
+                </article>
+                <article class="helpme-service-card">
+                    <h3>Transportes y Mudanzas</h3>
+                    <img src="Imagenes/help-me/servicio-mudanzas.jpg" alt="Servicio de mudanzas y transporte de muebles" loading="lazy">
+                    <p>Servicios de mudanzas y transporte de materiales, muebles y otros objetos, a cualquier lugar de Tenerife con seguridad y eficiencia.</p>
+                </article>
+                <article class="helpme-service-card">
+                    <h3>Servicios de limpieza</h3>
+                    <img src="Imagenes/help-me/servicio-limpieza.jpg" alt="Servicios profesionales de limpieza" loading="lazy">
+                    <p>Soluciones de limpieza adaptadas a tus necesidades, incluyendo limpieza de hogares, oficinas, locales comerciales y más. Contamos con personal capacitado y productos de limpieza de alta calidad para garantizar resultados excepcionales.</p>
+                </article>
+                <article class="helpme-service-card">
+                    <h3>Gestión y documentación</h3>
+                    <img src="Imagenes/help-me/servicio-gestiones.jpg" alt="Documentos organizados para realizar gestiones administrativas" loading="lazy">
+                    <p>Información y orientación sobre los trámites y gestiones necesarios para realizar diferentes procesos, incluyendo la obtención de licencias, permisos y regularización de documentos.</p>
+                </article>
+                <article class="helpme-service-card">
+                    <h3>Marketing y Publicidad</h3>
+                    <img src="Imagenes/help-me/servicio-marketing.jpg" alt="Equipo trabajando en una estrategia de marketing y publicidad" loading="lazy">
+                    <p>Servicios de marketing y publicidad para ayudar a las empresas a promocionar sus productos y servicios, incluyendo estrategias de marketing digital, diseño gráfico y campañas publicitarias.</p>
+                </article>
+                <article class="helpme-service-card">
+                    <h3>Seguros</h3>
+                    <img src="Imagenes/help-me/servicio-seguros.jpg" alt="Profesional mostrando un formulario de solicitud de asistencia para el hogar" loading="lazy">
+                    <p>Consulta información sobre los servicios de seguros disponibles, incluyendo seguros de salud, seguros de vida, seguros de hogar, vehículos y más.</p>
+                </article>
+            </div>
+            <p class="helpme-services-note"><em>Consulta con el equipo de Help Me la disponibilidad y el alcance de cada servicio.</em></p>
+        </section>
+    </main>
+
+    <footer class="helpme-footer">
+        <p>© Help Me Tenerife · Presentación de servicios</p>
+        <a href="index.html">Volver al portafolio <span aria-hidden="true">↗</span></a>
+    </footer>
+</body>
+</html>
