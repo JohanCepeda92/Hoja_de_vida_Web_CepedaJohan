@@ -18,3 +18,467 @@
     --spacing: 1rem;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+html { 
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top right, rgba(30, 99, 160, 0.18), transparent 35rem), var(--color-background);
+    color: var(--color-text);
+
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+}
+
+h2 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+}
+
+h3 { 
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+p { 
+    color: var(--color-muted);
+}
+
+a { 
+    color: var(--color-cyan);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-blue)
+}
+
+a:focus-visible { 
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 4px;
+}
+
+.cv-layout { 
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas: 
+        "cabecera"
+        "menu"
+        "perfil"
+        "principal"
+        "lateral"
+        "pie";
+    
+    gap: var(--spacing);
+
+    width: calc(100% - 2rem);
+    max-width: 76rem;
+
+    margin-inline: auto;
+
+    padding-block: 1.25rem 2rem;
+
+}
+
+/* CABECERA */
+
+.site-header {
+    grid-area: cabecera;
+
+    padding: 1.5rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            135deg,
+            #10243c,
+            #0c1b30
+        );
+
+    overflow-wrap: anywhere;
+}
+.site-kicker,
+.section-kicker {
+    color: var(--color-cyan);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+    margin-bottom: 0.6rem;
+}
+
+.site-header h1 {
+
+    margin-bottom: 0.6rem;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    overflow-wrap: anywhere;
+}
+
+.site-subtittle { 
+    margin-bottom: 1rem;
+}
+
+.site-badge {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0.4rem 0.75rem;
+    color: var(--color-cyan);
+
+    background: rgba(53, 231, 242, 0.08);
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+
+.site-nav {
+    grid-area: menu;
+
+    min-width: 0;
+}
+
+.site-nav__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 0.5rem;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav__list a {
+    display: block;
+
+    padding: 0.7rem 0.9rem;
+
+    color: var(--color-muted);
+
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.site-nav__list a:hover,
+.site-nav__list a[aria-current="page"] {
+    color: var(--color-cyan);
+
+    background: var(--color-panel);
+
+    border-color: var(--color-border);
+}
+
+/* PANELES GENERALES */
+
+.panel {
+    min-width: 0;
+
+    padding: 1.25rem;
+
+    background: var(--color-panel);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    overflow-wrap: anywhere;
+}
+
+.panel > :last-child {
+    margin-bottom: 0;
+}
+
+/* PERFIL PROFESIONAL */ 
+
+.cv-profile {
+    grid-area: perfil;
+}
+
+.cv-profile p:last-child {
+    margin-bottom: 0;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.cv-main {
+    grid-area: principal;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    align-content: start;
+    gap: var(--spacing);
+
+    min-width: 0;
+}
+
+/* TARJETAS DE INFORMACION */ 
+
+.info-card,
+.project-card,
+.skill-card {
+    min-width: 0;
+
+    padding: 1rem;
+
+    background: var(--color-card);
+
+    border: 1px solid rgba(103, 170, 255, 0.2);
+
+    border-radius: 0.65rem;
+}
+
+.info-card + .info-card {
+    margin-top: 0.8rem;
+}
+
+.info-card p:last-child,
+.project-card p:last-child {
+    margin-bottom: 0;
+}
+
+.item-subtitle {
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+}
+
+.item-date {
+    front-size: 0.9rem;
+    color: var(--color-cyan);
+}
+
+.project-tag {
+    color: var(--color-cyan);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08rem;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 075rem;
+    font-weight: 700;
+}
+
+/* INFORMACION LATERAL */
+
+.cv-sidebar {
+    grid-area: lateral;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    align-content: start;
+    gap: var(--spacing);
+
+    min-width: 0;
+}
+
+/* TARJETAS CON AUTO-FIT Y MINMAX */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+
+    gap: 0.75rem;
+}
+
+.skill-card {
+    padding: 0.9rem;
+}
+
+.skill-card h3 {
+    color: var(--color-text);
+
+    font-size: 0.95rem;
+
+    margin-bottom: 0.35rem;
+}
+
+.skill-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.interest-list {
+    padding-left: 1.2rem;
+
+    color: var(--color-muted);
+}
+
+.interest-list li + li {
+    margin-top: 0.65rem;
+}
+
+/* IMAGENES RESPONSIVE */
+
+img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+}
+
+/* PIE DE PAGINA */
+
+.site-footer {
+    grid-area: pie;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    padding: 1.25rem 0.25rem;
+
+    border-top: 1px solid var(--color-border);
+}
+
+.site-footer p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* PRIMER BREAKPOINT - 600PX
+   Adaptación para pantallas mas amplias */
+
+@media (min-width: 600px) {
+
+    .cv-layout {
+        gap: 1.25rem;
+
+        padding-block: 2rem;
+    }
+
+    .site-header {
+        padding: 2rem;
+    }
+
+    .site-nav__list {
+        justify-content: flex-start;
+        gap: 0.75rem;
+    }
+
+    .cv-main {
+        grid-template-columns:
+            repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    }
+
+    #proyectos {
+        grid-column: 1 / -1;
+    }
+
+    .cv-sidebar {
+        grid-template-columns:
+            repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    }
+
+    .site-footer {
+        flex-direction: row;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+/* R3 Y R4: SEGUNDO BREAKPOINT - 1024PX
+   Composición ampliada para computador */
+
+@media (min-width: 1024px) {
+
+    .cv-layout {
+        grid-template-columns:
+            minmax(0, 1.7fr)
+            minmax(17rem, 0.9fr);
+
+        grid-template-areas:
+            "cabecera cabecera"
+            "menu menu"
+            "perfil perfil"
+            "principal lateral"
+            "pie pie";
+
+        gap: 1.25rem;
+    }
+
+    .site-header {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: flex-end;
+
+        gap: 2rem;
+    }
+
+    .site-header__copy {
+        min-width: 0;
+    }
+
+    .site-header h1 {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+
+    .site-badge {
+        flex-shrink: 0;
+    }
+
+    .cv-main {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #proyectos {
+        grid-column: auto;
+    }
+
+    .cv-sidebar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+}
