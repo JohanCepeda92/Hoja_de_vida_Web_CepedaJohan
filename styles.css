@@ -22,7 +22,7 @@
     box-sizing: border-box;
 }
 
-html { 
+html {
     scroll-behavior: smooth;
 }
 
@@ -31,7 +31,7 @@ body {
     background: radial-gradient(circle at top right, rgba(30, 99, 160, 0.18), transparent 35rem), var(--color-background);
     color: var(--color-text);
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
 
@@ -53,16 +53,16 @@ h2 {
     margin-bottom: 1rem;
 }
 
-h3 { 
+h3 {
     font-size: 1.05rem;
     margin-bottom: 0.5rem;
 }
 
-p { 
+p {
     color: var(--color-muted);
 }
 
-a { 
+a {
     color: var(--color-cyan);
     text-decoration: none;
 }
@@ -71,24 +71,24 @@ a:hover {
     color: var(--color-blue)
 }
 
-a:focus-visible { 
+a:focus-visible {
     outline: 2px solid var(--color-cyan);
     outline-offset: 4px;
 }
 
-.cv-layout { 
+.cv-layout {
     display: grid;
 
     grid-template-columns: minmax(0, 1fr);
 
-    grid-template-areas: 
+    grid-template-areas:
         "cabecera"
         "menu"
         "perfil"
         "principal"
         "lateral"
         "pie";
-    
+
     gap: var(--spacing);
 
     width: calc(100% - 2rem);
@@ -111,14 +111,13 @@ a:focus-visible {
     border-radius: var(--radius);
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #10243c,
-            #0c1b30
-        );
+            #0c1b30);
 
     overflow-wrap: anywhere;
 }
+
 .site-kicker,
 .section-kicker {
     color: var(--color-cyan);
@@ -139,7 +138,7 @@ a:focus-visible {
     overflow-wrap: anywhere;
 }
 
-.site-subtittle { 
+.site-subtittle {
     margin-bottom: 1rem;
 }
 
@@ -158,6 +157,32 @@ a:focus-visible {
     font-weight: 700;
     letter-spacing: 0.04rem;
 }
+
+/* CONTENEDOR DE FOTO E INSIGNIA */
+
+.site-header__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    margin-top: 1rem;
+}
+
+/* FOTOGRAFÍA DE PERFIL */
+
+.site-header__photo {
+    width: 8rem;
+    height: 8rem;
+
+    object-fit: cover;
+
+    border: 2px solid var(--color-cyan);
+    border-radius: 50%;
+
+    box-shadow: 0 0 1.25rem rgba(53, 231, 242, 0.15);
+}
+
 
 /* MENÚ DE NAVEGACIÓN */
 
@@ -220,11 +245,11 @@ a:focus-visible {
     overflow-wrap: anywhere;
 }
 
-.panel > :last-child {
+.panel> :last-child {
     margin-bottom: 0;
 }
 
-/* PERFIL PROFESIONAL */ 
+/* PERFIL PROFESIONAL */
 
 .cv-profile {
     grid-area: perfil;
@@ -248,7 +273,7 @@ a:focus-visible {
     min-width: 0;
 }
 
-/* TARJETAS DE INFORMACION */ 
+/* TARJETAS DE INFORMACION */
 
 .info-card,
 .project-card,
@@ -264,7 +289,7 @@ a:focus-visible {
     border-radius: 0.65rem;
 }
 
-.info-card + .info-card {
+.info-card+.info-card {
     margin-top: 0.8rem;
 }
 
@@ -294,7 +319,7 @@ a:focus-visible {
 
 .text-link {
     display: inline-block;
-    margin-top: 075rem;
+    margin-top: 0.75rem;
     font-weight: 700;
 }
 
@@ -346,7 +371,7 @@ a:focus-visible {
     color: var(--color-muted);
 }
 
-.interest-list li + li {
+.interest-list li+li {
     margin-top: 0.65rem;
 }
 
@@ -435,8 +460,7 @@ img {
 
     .cv-layout {
         grid-template-columns:
-            minmax(0, 1.7fr)
-            minmax(17rem, 0.9fr);
+            minmax(0, 1.7fr) minmax(17rem, 0.9fr);
 
         grid-template-areas:
             "cabecera cabecera"
@@ -459,6 +483,11 @@ img {
 
     .site-header__copy {
         min-width: 0;
+    }
+
+    .site-header__aside {
+        flex-shrink: 0;
+        margin-top: 0;
     }
 
     .site-header h1 {
